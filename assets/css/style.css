@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: orange;
+}
+
+.questionswrap {
+    width: 60%;
+
+}
+
+.ask h2{
+   
+}
+
+.ask {
+    background-color: #fff;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-block-start-width: 5px;
+    margin-bottom: 25px;
+}
