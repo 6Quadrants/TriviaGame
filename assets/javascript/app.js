@@ -1,21 +1,71 @@
 
 
-// when start is clicked, load & start timer
-// count down from 1 min
-
-// function start() {
-//       intervalId = setInterval(count, 1000 * 60);
-//     }
-    
-// scores 
-
-$(document).ready(function () {
-
     var correct = 0;
     var incorrect = 0;
     var unanswered = 0;
 
- 
+
+
+$(window).on("load", function () {
+     $("#begin").on("click", countdown.start);
+    });
+
+    var intervalID;
+    var clockRunning = false;
+
+var countdown = {
+        time: 0,
+   
+start: function() {
+    if(!clockRunning) {
+        intervalId = setInterval(countdown.count, 1000);
+        clockRunning= true;
+        $("#counter").text("01:00");
+    }
+},
+
+count: function() {
+
+    countdown.time--;
+
+   
+    var converted = countdown.timeConverter(countdown.time);
+    $("#counter").text(converted);
+
+    if (countdown.time === -60) {
+        clearInterval(intervalId);
+        clockRunning = false;
+        $("#counter").html("TIME IS UP, LOSER!");
+
+    }
+
+    console.log(converted);
+    console.log(countdown.time);
+
+},
+
+
+timeConverter: function(t) {
+    var minutes = Math.floor(t / 60);
+    var seconds = t - (minutes * 60);
+    
+    if(seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    if(minutes === 0) {
+        minutes = "00";
+    }
+
+    else if (minutes < 10) {
+        minutes = "0";
+      }
+
+    return minutes + ":" + seconds;
+
+}
+
+};
 
 
 $("input[type='radio']").click(function() {
@@ -30,38 +80,7 @@ $("input[type='radio']").click(function() {
         alert("incorrect!");
     } 
     
-})
 
-console.log(updatedCorrect);
-console.log(correct);
-
-
-
-
-// function checkedAnswer() {
-    
-// }
-
-console.log(radioValue);
-
-// questions
-
-//get value from questions 1-9
-
-//loop through 1-9 / run checkedAnswer
-
-// if ".correct" is checked then correct++
-// else if incorrect++
-// else if nothing is checked unanswered++
-
-
-// timer ends
-
-// when timer = 00:00 
-
-unanswered = ( 9 - (updatedCorrect + updatedIncorrect));
-
-
-// show page with scores
-
+    console.log(unanswered);
 });
+

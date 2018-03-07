@@ -9,12 +9,47 @@ body {
 
 .questionswrap {
     width: 60%;
+}
+
+.startbtn {
+    border: #000;
+    border-style: solid;
+    border-width: 3px;
+    padding: 10px 20px 10px 20px;
+    font-size: 44px;
+    font-weight: 500;
+}
+
+.row.header {
+    background-color: rgb(247, 181, 83);
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+
+.row.header h1, h2{
+    text-align: center;
+    margin: auto;
+}
+
+.countdown {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* .question {
+    background-color: aqua;
+    width: 100%;
+}
+
+.number  {
+    background-color: rgb(7, 77, 77);
 
 }
 
 .ask h2{
-   
-}
+} */
 
 .ask {
     background-color: #fff;
